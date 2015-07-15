@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.toreo.torero.solicita">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="@string/solicita_texto"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/EditTextName"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_solicita"
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="40dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/EditTextLast"
+        android:layout_height="wrap_content"
+        android:hint="@string/apellido_solicita"
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="80dp">
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:textSize="20dp"
+        android:text="Direccion"/>
+
+    <EditText
+        android:id="@+id/EditTextStreet"
+        android:layout_height="wrap_content"
+        android:hint="@string/calle_solicita"
+        android:inputType="textPersonName"
+        android:layout_width="300dp"
+        android:layout_marginTop="160dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/EditTextNumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/numero_solicita"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="160dp"/>
+
+    <EditText
+        android:id="@+id/EditTextColonia"
+        android:hint="@string/colonia_solicita"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"/>
+    <EditText
+        android:id="@+id/EditTextDelegacion"
+        android:hint="@string/delegacion_solicita"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="240dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/EditTextJuzgado"
+        android:layout_marginTop="280dp"
+        android:hint="@string/juzgado_solicita"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delegacion o Juzgado"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerDelegacion"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="180dp"
+        android:entries="@array/delegacion_df"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numero o nombre"
+        android:textSize="18dp"/>
+    <Spinner
+        android:id="@+id/spinnerJuzgado"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="180dp"
+        android:entries="@array/juzgado_Alvaro_Obregon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/ButtonSendForm"
+        android:layout_marginTop="420dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_solicita"
+        android:onClick="sendForm"
+        android:layout_width="fill_parent">
+    </Button>
+
+</FrameLayout>
+

@@ -3,4 +3,70 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Torero</string>
+
+    <string name="title_section1">Acerca de</string>
+    <string name="title_section2">Intrucciones</string>
+    <string name="title_section3">Solicita</string>
+    <string name="acerca_de_fragment">  Torero es una empresa dedicada a facilitar el acceso a la justicia a la población
+                                        ofreciendo el servicio de amparo a los ciudadanos cuyos derechos constitucionales
+                                        fueron violados por el programa alcoholimetro</string>
+    <string name="instrucciones_toreo">¿Cómo tramitar tu amparo de
+
+forma rápida y segura?
+
+1. Envía tus datos y el pago
+
+correspondiente.
+
+2. Un representante de
+
+"Torero" redactará y presentará
+
+de inmediato tu amparo.
+
+3. Un juez de distrito aprobará
+
+la suspensión de tus horas en
+
+"el torito" o "la vaquita".
+
+4. Un secretario actuario será
+
+enviado a notificar la
+
+suspensión a la autoridad
+
+correspondiente.
+
+5. Alcanzarás la libertad y
+
+podrás descansar tranquilo en
+
+6. En caso de que el juez
+
+determine que deberás
+
+cumplir posteriormente con
+
+horas de arresto, se te
+
+notificará en el domicilio que
+
+nos enviaste.
+
+casa.</string>
+    <string name="solicita_texto">Datos para solicitar</string>
+    <string name="nombre_solicita">Nombre</string>
+    <string name="calle_solicita" >Calle</string>
+    <string name="numero_solicita">Num.</string>
+    <string name="colonia_solicita">Colonia</string>
+    <string name="juzgado_solicita">Juzgado Civico</string>
+    <string name="delegacion_solicita">Delegacion</string>
+    <string name="apellido_solicita">Apellidos</string>
+    <string name="button_solicita">Ok</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_payment">PaymentActivity</string>
 </resources>
