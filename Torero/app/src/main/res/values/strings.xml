@@ -65,8 +65,10 @@ casa.</string>
     <string name="delegacion_solicita">Delegacion</string>
     <string name="apellido_solicita">Apellidos</string>
     <string name="button_solicita">Ok</string>
+    <string name="button_pago">Pagar</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_payment">PaymentActivity</string>
+    <string name="title_activity_confirmar">Confirmar</string>
+    <string name="title_activity_popup_terminos">PopupTerminos</string>
 </resources>

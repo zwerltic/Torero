@@ -72,7 +72,7 @@ public class Solicita extends Fragment {
                 String juzgado = juzgadoField.getText().toString();
                 String delegSpin = delegSpinner.getSelectedItem().toString();
                 String numSpin = numSpinner.getSelectedItem().toString();
-                Intent paymentChange = new Intent(getActivity(), PaymentActivity.class);
+                Intent paymentChange = new Intent(getActivity(), ConfirmarActivity.class);
                 paymentChange.putExtra("name", name);
                 paymentChange.putExtra("last", lastName);
                 paymentChange.putExtra("street", street);
