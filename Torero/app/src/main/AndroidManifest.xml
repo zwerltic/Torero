@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.toreo.torero" >
 
-    <uses-sdk tools:overrideLibrary="android.support.v13" />
+    <uses-sdk tools:overrideLibrary="io.conekta.tokenizer" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,14 +13,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <service
-            android:name="com.paypal.android.sdk.payments.PayPalService"
-            android:exported="false" />
-
-        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
-        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
-        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
-        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -41,6 +33,34 @@
         <activity
             android:name=".PopupTerminos"
             android:label="@string/title_activity_popup_terminos" >
+        </activity>
+        <activity
+            android:name=".Terminos"
+            android:label="@string/title_activity_terminos"
+            android:parentActivityName=".ConfirmarActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toreo.torero.ConfirmarActivity" />
+        </activity>
+        <activity
+            android:name=".AvisoPrivacidad"
+            android:label="@string/title_activity_aviso_privacidad"
+            android:parentActivityName=".Terminos" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toreo.torero.Terminos" />
+        </activity>
+        <activity
+            android:name=".Pagar"
+            android:label="@string/title_activity_pagar"
+            android:parentActivityName=".AvisoPrivacidad" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.toreo.torero.Terminos" />
+        </activity>
+        <activity
+            android:name=".Gracias"
+            android:label="@string/title_activity_gracias" >
         </activity>
     </application>
 

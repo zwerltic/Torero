@@ -8,6 +8,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -26,12 +28,12 @@ public class Solicita extends Fragment {
     EditText nameField;
     EditText lastField;
     EditText streetField;
+    EditText numField;
     EditText coloniaField;
     EditText delegField;
-    EditText juzgadoField;
     Button buttonSumbit;
     Spinner delegSpinner;
-    Spinner numSpinner;
+    Spinner finalSpinner;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -52,36 +54,52 @@ public class Solicita extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_solicita, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_solicita, container, false);
         nameField = (EditText) rootView.findViewById(R.id.EditTextName);
         lastField = (EditText) rootView.findViewById(R.id.EditTextLast);
         streetField = (EditText) rootView.findViewById(R.id.EditTextStreet);
+        numField = (EditText) rootView.findViewById(R.id.EditTextNumb);
         coloniaField = (EditText) rootView.findViewById(R.id.EditTextColonia);
         delegField = (EditText) rootView.findViewById(R.id.EditTextDelegacion);
-        juzgadoField = (EditText) rootView.findViewById(R.id.EditTextJuzgado);
         delegSpinner = (Spinner) rootView.findViewById(R.id.spinnerDelegacion);
-        numSpinner = (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
+        finalSpinner= (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
         buttonSumbit = (Button) rootView.findViewById(R.id.ButtonSendForm);
+        delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String firstChoice =delegSpinner.getSelectedItem().toString().replaceFirst("\\s", "");
+                int fid = getResources().getIdentifier(firstChoice, "array", getActivity().getBaseContext().getPackageName());
+                ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                       getActivity(), fid, android.R.layout.simple_spinner_item);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                finalSpinner.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String name = nameField.getText().toString();
                 String lastName = lastField.getText().toString();
                 String street = streetField.getText().toString();
+                String number = numField.getText().toString();
                 String colonia = coloniaField.getText().toString();
                 String delegacion = delegField.getText().toString();
-                String juzgado = juzgadoField.getText().toString();
-                String delegSpin = delegSpinner.getSelectedItem().toString();
-                String numSpin = numSpinner.getSelectedItem().toString();
-                Intent paymentChange = new Intent(getActivity(), ConfirmarActivity.class);
-                paymentChange.putExtra("name", name);
-                paymentChange.putExtra("last", lastName);
-                paymentChange.putExtra("street", street);
-                paymentChange.putExtra("colonia", colonia);
-                paymentChange.putExtra("delegacion", delegacion);
-                paymentChange.putExtra("juzgado", juzgado);
-                paymentChange.putExtra("delegacionDeLista", delegSpin);
-                paymentChange.putExtra("numeroLista", numSpin);
-                startActivity(paymentChange);
+                String numSpin = finalSpinner.getSelectedItem().toString();
+                Intent sendingIntent = new Intent(getActivity(), ConfirmarActivity.class);
+                sendingIntent.putExtra("name", name);
+                sendingIntent.putExtra("last", lastName);
+                sendingIntent.putExtra("street", street);
+                sendingIntent.putExtra("number", number);
+                sendingIntent.putExtra("colonia", colonia);
+                sendingIntent.putExtra("delegacion", delegacion);
+                sendingIntent.putExtra("juzgado", numSpin);
+                startActivity(sendingIntent);
             }
 
         });

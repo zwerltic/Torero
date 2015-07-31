@@ -63,8 +63,8 @@
         android:layout_width="fill_parent"
         android:layout_marginTop="240dp"
         android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/EditTextJuzgado"
+    <TextView
+        android:id="@+id/TextJuzgado"
         android:layout_marginTop="280dp"
         android:hint="@string/juzgado_solicita"
         android:layout_width="fill_parent"
@@ -82,7 +82,7 @@
         android:id="@+id/spinnerDelegacion"
         android:layout_marginTop="320dp"
         android:layout_marginLeft="180dp"
-        android:entries="@array/delegacion_df"
+        android:entries="@array/Delegaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView
@@ -96,7 +96,7 @@
         android:id="@+id/spinnerJuzgado"
         android:layout_marginTop="360dp"
         android:layout_marginLeft="180dp"
-        android:entries="@array/juzgado_Alvaro_Obregon"
+        android:entries="@array/Cuauhtemoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
@@ -104,8 +104,7 @@
         android:layout_marginTop="420dp"
         android:layout_height="wrap_content"
         android:text="@string/button_solicita"
-        android:onClick="sendForm"
-        android:layout_width="fill_parent">
+        android:layout_width="match_parent">
     </Button>
 
 </FrameLayout>

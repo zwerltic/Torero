@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="juzgado_Alvaro_Obregon">
-        <item>alv pprimero</item>
-        <item>alv segundo</item>
-        <item>alv tercero</item>
-    </string-array>
+    <!--<string-array name="ÁLVAROOBREGÓN">-->
+        <!--<item>alv pprimero</item>-->
+        <!--<item>alv segundo</item>-->
+        <!--<item>alv tercero</item>-->
+    <!--</string-array>-->
 
-    <string-array name="juzgado_Cuauhtemoc">
+    <string-array name="Cuauhtemoc">
         <item>cuau primero</item>
         <item>cuau segundo</item>
         <item>cuau tercero</item>
     </string-array>
 
-    <string-array name="juzgado_Anana">
+    <string-array name="Anana">
         <item>anan primero</item>
         <item>anan segundo</item>
         <item>anan tercero</item>
     </string-array>
 
-    <string-array name="delegacion_df">
-        <item>Alvaro Obregon</item>
+    <string-array name="Delegaciones">
+        <!--<item>ÁLVARO OBREGÓN</item>-->
         <item>Cuauhtemoc</item>
         <item>Anana</item>
     </string-array>

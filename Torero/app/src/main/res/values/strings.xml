@@ -57,6 +57,7 @@ nos enviaste.
 
 casa.</string>
     <string name="solicita_texto">Datos para solicitar</string>
+    <string name="graicas_texto">Gracias por no se que de que </string>
     <string name="nombre_solicita">Nombre</string>
     <string name="calle_solicita" >Calle</string>
     <string name="numero_solicita">Num.</string>
@@ -66,9 +67,14 @@ casa.</string>
     <string name="apellido_solicita">Apellidos</string>
     <string name="button_solicita">Ok</string>
     <string name="button_pago">Pagar</string>
-
+    <string name="terminos_condiciones">Terminos y condiciones</string>
+    <string name="aviso_privacidad">Aviso de Privacidad</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_confirmar">Confirmar</string>
     <string name="title_activity_popup_terminos">PopupTerminos</string>
+    <string name="title_activity_terminos">Terminos</string>
+    <string name="title_activity_aviso_privacidad">AvisoPrivacidad</string>
+    <string name="title_activity_pagar">Pagar</string>
+    <string name="title_activity_gracias">Gracias</string>
 </resources>

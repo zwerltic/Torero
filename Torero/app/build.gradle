@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.toreo.torero"
-        minSdkVersion 5
+        minSdkVersion 13
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -22,7 +27,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v13:22.2.0'
-    compile 'com.android.support:support-v4:22.2.0'
-    compile files('libs/PayPalAndroidSDK-2.9.10.jar')
+    compile 'io.conekta:tokenizer:1.0'
     compile files('libs/activation.jar')
 }
+
+
