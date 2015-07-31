@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<string-array name="ÁLVAROOBREGÓN">-->
-        <!--<item>alv pprimero</item>-->
-        <!--<item>alv segundo</item>-->
-        <!--<item>alv tercero</item>-->
-    <!--</string-array>-->
-
-    <string-array name="Cuauhtemoc">
-        <item>cuau primero</item>
-        <item>cuau segundo</item>
-        <item>cuau tercero</item>
-    </string-array>
-
-    <string-array name="Anana">
-        <item>anan primero</item>
-        <item>anan segundo</item>
-        <item>anan tercero</item>
-    </string-array>
 
     <string-array name="Delegaciones">
-        <!--<item>ÁLVARO OBREGÓN</item>-->
+        <item>Alvaro Obregon</item>
+        <item>Azcapotzalco</item>
+        <item>Benito Juarez</item>
+        <item>Coyoacan</item>
         <item>Cuauhtemoc</item>
-        <item>Anana</item>
+        <item>Cuajimalpa</item>
+        <item>Gustavo A. Madero</item>
+        <item>Iztacalco</item>
+        <item>Iztapalapa</item>
+        <item>Magdalena Contreras</item>
+        <item>Miguel Hidalgo</item>
+        <item>Milpa Alta</item>
+        <item>Tlahuac</item>
+        <item>Tlalpan</item>
+        <item>Venustiano Carranza</item>
+        <item>Xochimilco</item>
+    </string-array>
+
+    <string-array name="AlvaroObregon">
+        <item>Escuadron 201 Esq. Batallon de San Patricio S/N Col. Cristo Rey.</item>
+        <item>Camino Real de Toluca S/N entre paralela 2 y 3, Col. Jose Maria</item>
+        <item>Tlaxcala y Av. Mexico, Col. Progresso</item>
+    </string-array>
+
+    <string-array name="Tlalpan">
+        <item>Carretera Picacho Ajusco Km. 45, Col Ampliacion Miguel Hidalgo</item>
+        <item>Matamoros y Jojutla, Col. La Joya</item>
+        <item>Canal Nacional, Esq. Anillo Periferico Sur (A un costado de la U.H Dr. Ignacio Chavez).</item>
+    </string-array>
+
+    <string-array name="Xochimilco">
+        <item>Circuito Martinez de Castro S/N Pueblo San Mateo Xalpa</item>
+        <item>Cuitlahuac y gladiolas, Col. Barrio San Pedro Xochimilco</item>
     </string-array>
 </resources>

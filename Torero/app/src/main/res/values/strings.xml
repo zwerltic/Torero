@@ -8,9 +8,9 @@
     <string name="title_section1">Acerca de</string>
     <string name="title_section2">Intrucciones</string>
     <string name="title_section3">Solicita</string>
-    <string name="acerca_de_fragment">  Torero es una empresa dedicada a facilitar el acceso a la justicia a la población
-                                        ofreciendo el servicio de amparo a los ciudadanos cuyos derechos constitucionales
-                                        fueron violados por el programa alcoholimetro</string>
+    <string name="acerca_de_fragment">  Torero es una empresa \ndedicada a facilitar el \nacceso a la justicia a la \npoblación
+                                        ofreciendo el \nservicio de amparo a \nlos ciudadanos cuyos \nderechos constitucionales
+                                        \nfueron violados por el \nprograma alcoholimetro</string>
     <string name="instrucciones_toreo">¿Cómo tramitar tu amparo de
 
 forma rápida y segura?
@@ -57,7 +57,7 @@ nos enviaste.
 
 casa.</string>
     <string name="solicita_texto">Datos para solicitar</string>
-    <string name="graicas_texto">Gracias por no se que de que </string>
+    <string name="graicas_texto">Gracias </string>
     <string name="nombre_solicita">Nombre</string>
     <string name="calle_solicita" >Calle</string>
     <string name="numero_solicita">Num.</string>
@@ -65,7 +65,7 @@ casa.</string>
     <string name="juzgado_solicita">Juzgado Civico</string>
     <string name="delegacion_solicita">Delegacion</string>
     <string name="apellido_solicita">Apellidos</string>
-    <string name="button_solicita">Ok</string>
+    <string name="button">ACEPTAR</string>
     <string name="button_pago">Pagar</string>
     <string name="terminos_condiciones">Terminos y condiciones</string>
     <string name="aviso_privacidad">Aviso de Privacidad</string>

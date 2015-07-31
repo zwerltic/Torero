@@ -4,7 +4,13 @@
 
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/acerca_de_fragment" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="@string/acerca_de_fragment"
+        android:textSize="22dp"
+        android:textIsSelectable="true"
+        android:singleLine="false"
+        android:password="false"
+        android:phoneNumber="false"
+        android:layout_gravity="center_horizontal|top" />
 
 </FrameLayout>

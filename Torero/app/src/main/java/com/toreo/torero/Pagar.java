@@ -105,7 +105,6 @@ public class Pagar extends Activity {
         EditText monthText = (EditText) this.findViewById(R.id.monthText);
         EditText yearText = (EditText) this.findViewById(R.id.yearText);
         EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
-        final TextView outputView = (TextView) this.findViewById(R.id.outputView);
         try {
             JSONObject card = new JSONObject(
                     "{'card':" +
@@ -142,7 +141,6 @@ public class Pagar extends Activity {
                                 result = ((Error) error).message_to_purchaser;
                             else
                                 result = error.getMessage();
-                            outputView.setText(result);
                         }
                     });
         } catch (JSONException e) {
@@ -156,7 +154,7 @@ public class Pagar extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = ProgressDialog.show(Pagar.this, "Please wait", "Sending mail", true, false);
+            progressDialog = ProgressDialog.show(Pagar.this, "Porfavor espere", "Procesando pago...", true, false);
         }
 
         @Override

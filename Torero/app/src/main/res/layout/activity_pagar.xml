@@ -71,14 +71,16 @@
         android:layout_toEndOf="@+id/textView3" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tokenize!"
+        android:text="PAGAR"
         android:id="@+id/button"
         android:onClick="tokenizeCard"
-        android:layout_marginBottom="50dp"
+        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="#1DE9B6"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,14 +101,5 @@
         android:layout_alignStart="@+id/cvcText"
         android:text="Mario Moreno Reyes" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="OUTPUT"
-        android:id="@+id/outputView"
-        android:layout_below="@+id/nameText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp" />
 
 </RelativeLayout>
