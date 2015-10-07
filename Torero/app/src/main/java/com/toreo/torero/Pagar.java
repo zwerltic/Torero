@@ -105,7 +105,7 @@ public class Pagar extends Activity {
                         public void failure(Exception error) {
                             // TODO: Output the error in your app
                             String result = null;
-                            if (error instanccd ./eof Error)
+                            if (error instanceof Error)
                                 result = ((Error) error).message_to_purchaser;
                             else
                                 result = error.getMessage();
