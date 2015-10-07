@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,8 @@ public class Solicita extends Fragment {
         delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String firstChoice =delegSpinner.getSelectedItem().toString().replaceFirst("\\s", "");
+                String firstChoice =delegSpinner.getSelectedItem().toString().replaceFirst("\\s", "").replaceAll("[^A-Za-z\\s]", "");
+                Log.d("This is the returned string", firstChoice);
                 int fid = getResources().getIdentifier(firstChoice, "array", getActivity().getBaseContext().getPackageName());
                 ArrayAdapter adapter = ArrayAdapter.createFromResource(
                        getActivity(), fid, android.R.layout.simple_spinner_item);
