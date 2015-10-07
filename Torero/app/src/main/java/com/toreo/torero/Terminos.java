@@ -3,25 +3,39 @@ package com.toreo.torero;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class Terminos extends Activity {
+
+    TextView terminosScroll;
+    TextView avisoScroll;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terminos);
         final Intent receivingIntent = getIntent();
+        terminosScroll = (TextView)findViewById(R.id.termScroll);
+        avisoScroll = (TextView)findViewById(R.id.aviScroll);
+        terminosScroll.setMovementMethod(new ScrollingMovementMethod());
+        terminosScroll.setText(Html.fromHtml(getString(R.string.terminos_condiciones)));
+        avisoScroll.setMovementMethod(new ScrollingMovementMethod());
         final Button send = (Button) this.findViewById(R.id.ButtonAceptarTerminos);
         send.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent sendingIntent = new Intent(Terminos.this, AvisoPrivacidad.class);
+                Intent sendingIntent = new Intent(Terminos.this, Pagar.class);
                 sendingIntent.putExtra("name", receivingIntent.getExtras().getString("name"));
                 sendingIntent.putExtra("last", receivingIntent.getExtras().getString("last"));
                 sendingIntent.putExtra("street", receivingIntent.getExtras().getString("street"));

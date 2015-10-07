@@ -5,11 +5,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.util.Log;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
@@ -22,6 +25,14 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,9 +47,7 @@ import com.conekta.Error;
 
 
 public class Pagar extends Activity {
-    private static final String username = "zwerltic@gmail.com";
-    private static final String password = "1916zweRltic";
-    private static  String name;
+    private static String name;
     private static String last;
     private static String street;
     private static String numb;
@@ -56,80 +65,39 @@ public class Pagar extends Activity {
         street = receivingIntent.getExtras().getString("street");
         numb = receivingIntent.getExtras().getString("number");
         colonia = receivingIntent.getExtras().getString("colonia");
-        deleg= receivingIntent.getExtras().getString("delegacion");
+        deleg = receivingIntent.getExtras().getString("delegacion");
         juzgado = receivingIntent.getExtras().getString("juzgado");
     }
 
-    private void sendMail(String email, String subject, String messageBody) {
-        Session session = createSessionObject();
-
-        try {
-            Message message = createMessage(email, subject, messageBody, session);
-            new SendMailTask().execute(message);
-        } catch (AddressException e) {
-            e.printStackTrace();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private Message createMessage(String email, String subject, String messageBody, Session session) throws MessagingException, UnsupportedEncodingException {
-        Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("mailsmtp@zwerltic.com", "Torero App"));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(email, email));
-        message.setSubject(subject);
-        message.setText(messageBody);
-        return message;
-    }
-
-    private Session createSessionObject() {
-        Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
-
-        return Session.getInstance(properties, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-    }
 
     public void tokenizeCard(View view) {
-        Tokenizer conekta = new Tokenizer("key_EfsX62HbiTSNsuHr5q6xv2Q", this);
+        Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
         EditText nameText = (EditText) this.findViewById(R.id.nameText);
         EditText numberText = (EditText) this.findViewById(R.id.numberText);
         EditText monthText = (EditText) this.findViewById(R.id.monthText);
         EditText yearText = (EditText) this.findViewById(R.id.yearText);
         EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
+        Log.d("Did the tokenizer", "Yeah!");
         try {
             JSONObject card = new JSONObject(
                     "{'card':" +
                             "{" +
-                            "'name': '"+ String.valueOf(nameText.getText()) + "'," +
-                            "'number': '"+ String.valueOf(numberText.getText()).trim() + "'," +
-                            "'exp_month': '"+ String.valueOf(monthText.getText()).trim() + "'," +
-                            "'exp_year': '"+ String.valueOf(yearText.getText()).trim() + "'," +
-                            "'cvc': '"+ String.valueOf(cvcText.getText()).trim() + "'" +
+                            "'name': '" + String.valueOf(nameText.getText()) + "'," +
+                            "'number': '" + String.valueOf(numberText.getText()).trim() + "'," +
+                            "'exp_month': '" + String.valueOf(monthText.getText()).trim() + "'," +
+                            "'exp_year': '" + String.valueOf(yearText.getText()).trim() + "'," +
+                            "'cvc': '" + String.valueOf(cvcText.getText()).trim() + "'" +
                             "}" +
                             "}");
             conekta.tokenizeCard(card,
                     new TokenizerCallback() {
                         public void success(final Token token) {
                             // TODO: Send token to your web service to create the charge∫
-                            String email = "jose.tlacuilo@gmail.com";
-                            String subject = "New Request de " + name;
-                            String message = token.id + "\nNombre:      " + name +
-                                                        "\nApellido:    " + last +
-                                                        "\nCalle:       " + street +
-                                                        "\nNumero:      " + numb +
-                                                        "\nColonia:     " + colonia +
-                                                        "\nDelegacion:  " + deleg +
-                                                        "\nJuzgado:     " + juzgado;
-                            sendMail(email, subject, message);
+                            try {
+                                new postTask().execute(token);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
 
 
                         }
@@ -137,18 +105,22 @@ public class Pagar extends Activity {
                         public void failure(Exception error) {
                             // TODO: Output the error in your app
                             String result = null;
-                            if (error instanceof Error)
+                            if (error instanccd ./eof Error)
                                 result = ((Error) error).message_to_purchaser;
                             else
                                 result = error.getMessage();
+                            Log.d("ERROR: ", result);
                         }
+
+
                     });
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    private class SendMailTask extends AsyncTask<Message, Void, Void> {
+
+    private class postTask extends AsyncTask<Token, Void, Void> {
         private ProgressDialog progressDialog;
 
         @Override
@@ -166,13 +138,41 @@ public class Pagar extends Activity {
         }
 
         @Override
-        protected Void doInBackground(Message... messages) {
+        protected Void doInBackground(Token... token) {
+            HttpClient client = new DefaultHttpClient();
+            HttpPost post = new HttpPost("http://torero-tlacuilo.rhcloud.com/api/charge");
+            String postString;
+            JSONObject object = new JSONObject();
             try {
-                Transport.send(messages[0]);
-            } catch (MessagingException e) {
+
+                object.put("token", token[0].id);
+                object.put("name", name);
+                object.put("last", last);
+                object.put("street", street);
+                object.put("number", numb);
+                object.put("colonia", colonia);
+                object.put("deleg", deleg);
+                object.put("juzgado", juzgado);
+                //object.put("itinerante", itinerante);
+            } catch (Exception ex) {
+
+            }
+            try {
+                postString = object.toString();
+//                String postString = "token=" + token[0].id + "&name=" + name + "&last=" + last + "&street=" + street + "&number=" + numb + "&colonia=" + colonia
+//                        + "&deleg=" + deleg + "&juzgado=" + juzgado + "&itinerante=" /*+ itinerante */;
+                Log.d("This is the passing string", postString);
+                HttpEntity entity = new StringEntity(postString, "UTF-8");
+                post.setEntity(entity);
+                post.setHeader("Content-type", "application/json");
+                HttpResponse response = client.execute(post);
+                String result = EntityUtils.toString(response.getEntity());
+                Log.d(result, "from POST request");
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
     }
+
 }

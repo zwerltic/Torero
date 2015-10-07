@@ -84,21 +84,29 @@ public class Solicita extends Fragment {
 
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String name = nameField.getText().toString();
-                String lastName = lastField.getText().toString();
-                String street = streetField.getText().toString();
-                String number = numField.getText().toString();
-                String colonia = coloniaField.getText().toString();
-                String delegacion = delegField.getText().toString();
-                String numSpin = finalSpinner.getSelectedItem().toString();
+                String name = "";
+                String last = "";
+                String street = "";
+                String numb = "";
+                String colonia = "";
+                String deleg = "";
+                String juzgado = "";
+                String itinerante = "";
+                name += nameField.getText().toString();
+                last += lastField.getText().toString();
+                street += streetField.getText().toString();
+                numb += numField.getText().toString();
+                colonia += coloniaField.getText().toString();
+                deleg += delegField.getText().toString();
+                juzgado += finalSpinner.getSelectedItem().toString();
                 Intent sendingIntent = new Intent(getActivity(), ConfirmarActivity.class);
                 sendingIntent.putExtra("name", name);
-                sendingIntent.putExtra("last", lastName);
+                sendingIntent.putExtra("last", last);
                 sendingIntent.putExtra("street", street);
-                sendingIntent.putExtra("number", number);
+                sendingIntent.putExtra("number", numb);
                 sendingIntent.putExtra("colonia", colonia);
-                sendingIntent.putExtra("delegacion", delegacion);
-                sendingIntent.putExtra("juzgado", numSpin);
+                sendingIntent.putExtra("delegacion", deleg);
+                sendingIntent.putExtra("juzgado", juzgado);
                 startActivity(sendingIntent);
             }
 

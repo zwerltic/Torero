@@ -31,24 +31,12 @@
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name=".PopupTerminos"
-            android:label="@string/title_activity_popup_terminos" >
-        </activity>
-        <activity
             android:name=".Terminos"
             android:label="@string/title_activity_terminos"
             android:parentActivityName=".ConfirmarActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.toreo.torero.ConfirmarActivity" />
-        </activity>
-        <activity
-            android:name=".AvisoPrivacidad"
-            android:label="@string/title_activity_aviso_privacidad"
-            android:parentActivityName=".Terminos" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.toreo.torero.Terminos" />
         </activity>
         <activity
             android:name=".Pagar"
