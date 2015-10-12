@@ -41,7 +41,7 @@
         <activity
             android:name=".Pagar"
             android:label="@string/title_activity_pagar"
-            android:parentActivityName=".AvisoPrivacidad" >
+            android:parentActivityName=".Terminos" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.toreo.torero.Terminos" />

@@ -1,7 +1,9 @@
 package com.toreo.torero;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -71,57 +73,72 @@ public class Pagar extends Activity {
 
 
     public void tokenizeCard(View view) {
-        Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
-        EditText nameText = (EditText) this.findViewById(R.id.nameText);
-        EditText numberText = (EditText) this.findViewById(R.id.numberText);
-        EditText monthText = (EditText) this.findViewById(R.id.monthText);
-        EditText yearText = (EditText) this.findViewById(R.id.yearText);
-        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
-        Log.d("Did the tokenizer", "Yeah!");
-        try {
-            JSONObject card = new JSONObject(
-                    "{'card':" +
-                            "{" +
-                            "'name': '" + String.valueOf(nameText.getText()) + "'," +
-                            "'number': '" + String.valueOf(numberText.getText()).trim() + "'," +
-                            "'exp_month': '" + String.valueOf(monthText.getText()).trim() + "'," +
-                            "'exp_year': '" + String.valueOf(yearText.getText()).trim() + "'," +
-                            "'cvc': '" + String.valueOf(cvcText.getText()).trim() + "'" +
-                            "}" +
-                            "}");
-            conekta.tokenizeCard(card,
-                    new TokenizerCallback() {
-                        public void success(final Token token) {
-                            // TODO: Send token to your web service to create the charge∫
-                            try {
-                                new postTask().execute(token);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-
-                        }
-
-                        public void failure(Exception error) {
-                            // TODO: Output the error in your app
-                            String result = null;
-                            if (error instanceof Error)
-                                result = ((Error) error).message_to_purchaser;
-                            else
-                                result = error.getMessage();
-                            Log.d("ERROR: ", result);
-                        }
-
-
-                    });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+        Intent sendingIntent = new Intent(Pagar.this, Gracias.class);
+        startActivity(sendingIntent);
+//        Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
+//        EditText nameText = (EditText) this.findViewById(R.id.nameText);
+//        EditText numberText = (EditText) this.findViewById(R.id.numberText);
+//        EditText monthText = (EditText) this.findViewById(R.id.monthText);
+//        EditText yearText = (EditText) this.findViewById(R.id.yearText);
+//        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
+//        Log.d("Did the tokenizer", "Yeah!");
+//        try {
+//            JSONObject card = new JSONObject(
+//                    "{'card':" +
+//                            "{" +
+//                            "'name': '" + String.valueOf(nameText.getText()) + "'," +
+//                            "'number': '" + String.valueOf(numberText.getText()).trim() + "'," +
+//                            "'exp_month': '" + String.valueOf(monthText.getText()).trim() + "'," +
+//                            "'exp_year': '" + String.valueOf(yearText.getText()).trim() + "'," +
+//                            "'cvc': '" + String.valueOf(cvcText.getText()).trim() + "'" +
+//                            "}" +
+//                            "}");
+//            conekta.tokenizeCard(card,
+//                    new TokenizerCallback() {
+//                        public void success(final Token token) {
+//                            // TODO: Send token to your web service to create the charge∫
+//                            try {
+//                                new postTask().execute(token);
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//
+//
+//                        }
+//
+//                        public void failure(Exception error) {
+//                            // TODO: Output the error in your app
+//                            String result = null;
+//                            if (error instanceof Error)
+//                                result = ((Error) error).message_to_purchaser;
+//                            else
+//                                result = error.getMessage();
+//                            AlertDialog alertDialog;
+//                            alertDialog = new AlertDialog.Builder(Pagar.this).create();
+//                            alertDialog.setTitle("Hubo un problema");
+//                            alertDialog.setMessage(result);
+//                            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//
+//                                }
+//                            });
+//                            alertDialog.show();
+//                            Log.d("ERROR: ", result);
+//                        }
+//
+//
+//                    });
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+   }
 
 
     private class postTask extends AsyncTask<Token, Void, Void> {
         private ProgressDialog progressDialog;
+
+        private String theResponse;
 
         @Override
         protected void onPreExecute() {
@@ -133,8 +150,22 @@ public class Pagar extends Activity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             progressDialog.dismiss();
-            Intent sendingIntent = new Intent(Pagar.this, Gracias.class);
-            startActivity(sendingIntent);
+            if (theResponse.equals("Success")) {
+                Intent sendingIntent = new Intent(Pagar.this, Gracias.class);
+                startActivity(sendingIntent);
+            } else {
+                AlertDialog alertDialog;
+                alertDialog = new AlertDialog.Builder(Pagar.this).create();
+                alertDialog.setTitle("Hubo un problema");
+                alertDialog.setMessage(theResponse);
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                alertDialog.show();
+            }
         }
 
         @Override
@@ -167,8 +198,10 @@ public class Pagar extends Activity {
                 post.setHeader("Content-type", "application/json");
                 HttpResponse response = client.execute(post);
                 String result = EntityUtils.toString(response.getEntity());
+                theResponse = result;
                 Log.d(result, "from POST request");
             } catch (IOException e) {
+                theResponse = "No pudimos enviar el pago";
                 e.printStackTrace();
             }
             return null;

@@ -31,10 +31,10 @@ public class Solicita extends Fragment {
     EditText streetField;
     EditText numField;
     EditText coloniaField;
-    EditText delegField;
-    Button buttonSumbit;
     Spinner delegSpinner;
-    Spinner finalSpinner;
+    Spinner juzgadoSpinner;
+    Spinner itineranteSpinner;
+    Button buttonSumbit;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -48,9 +48,7 @@ public class Solicita extends Fragment {
         return fragment;
     }
 
-    public Solicita() {
 
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,20 +59,20 @@ public class Solicita extends Fragment {
         streetField = (EditText) rootView.findViewById(R.id.EditTextStreet);
         numField = (EditText) rootView.findViewById(R.id.EditTextNumb);
         coloniaField = (EditText) rootView.findViewById(R.id.EditTextColonia);
-        delegField = (EditText) rootView.findViewById(R.id.EditTextDelegacion);
         delegSpinner = (Spinner) rootView.findViewById(R.id.spinnerDelegacion);
-        finalSpinner= (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
+        juzgadoSpinner = (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
+        itineranteSpinner = (Spinner) rootView.findViewById(R.id.spinnerItinerante);
         buttonSumbit = (Button) rootView.findViewById(R.id.ButtonSendForm);
         delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String firstChoice =delegSpinner.getSelectedItem().toString().replaceFirst("\\s", "").replaceAll("[^A-Za-z\\s]", "");
+                String firstChoice = delegSpinner.getSelectedItem().toString().replaceAll("\\s", "").replaceAll("[^A-Za-z\\s]", "");
                 Log.d("This is the returned string", firstChoice);
                 int fid = getResources().getIdentifier(firstChoice, "array", getActivity().getBaseContext().getPackageName());
                 ArrayAdapter adapter = ArrayAdapter.createFromResource(
                        getActivity(), fid, android.R.layout.simple_spinner_item);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                finalSpinner.setAdapter(adapter);
+                juzgadoSpinner.setAdapter(adapter);
 
             }
 
@@ -86,29 +84,31 @@ public class Solicita extends Fragment {
 
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String name = "";
-                String last = "";
-                String street = "";
-                String numb = "";
-                String colonia = "";
-                String deleg = "";
-                String juzgado = "";
-                String itinerante = "";
+                String name = " ";
+                String last = " ";
+                String street = " ";
+                String numb = " ";
+                String colonia = " ";
+                String deleg = " ";
+                String juzgado = " ";
+                String itinerante = " ";
                 name += nameField.getText().toString();
                 last += lastField.getText().toString();
                 street += streetField.getText().toString();
                 numb += numField.getText().toString();
                 colonia += coloniaField.getText().toString();
-                deleg += delegField.getText().toString();
-                juzgado += finalSpinner.getSelectedItem().toString();
+                deleg += delegSpinner.getSelectedItem().toString();
+                juzgado += juzgadoSpinner.getSelectedItem().toString();
+                itinerante += itineranteSpinner.getSelectedItem().toString();
                 Intent sendingIntent = new Intent(getActivity(), ConfirmarActivity.class);
                 sendingIntent.putExtra("name", name);
                 sendingIntent.putExtra("last", last);
                 sendingIntent.putExtra("street", street);
-                sendingIntent.putExtra("number", numb);
+                sendingIntent.putExtra("numero", numb);
                 sendingIntent.putExtra("colonia", colonia);
                 sendingIntent.putExtra("delegacion", deleg);
                 sendingIntent.putExtra("juzgado", juzgado);
+                sendingIntent.putExtra("itinerante", itinerante);
                 startActivity(sendingIntent);
             }
 

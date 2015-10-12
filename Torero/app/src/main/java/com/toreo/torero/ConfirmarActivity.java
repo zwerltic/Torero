@@ -20,11 +20,20 @@ public class ConfirmarActivity extends Activity {
     TextView name;
     TextView lastName;
     TextView street;
+    TextView numero;
     TextView colonia;
     TextView delegacion;
     TextView juzgado;
-    TextView delegJuzgado;
-    TextView nombJuzgado;
+    TextView itinerante;
+
+    public static String savedName;
+    public static String savedLast;
+    public static String savedStreet;
+    public static String savedNumero;
+    public static String savedColonia;
+    public static String savedDelegacion;
+    public static String savedJuzgado;
+    public static String savedItinerante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +41,32 @@ public class ConfirmarActivity extends Activity {
         setContentView(R.layout.activity_confirmar);
         final Intent receivingIntent = getIntent();
         name = (TextView) findViewById(R.id.DisplayTextName);
-        name.setText(receivingIntent.getExtras().getString("name"));
         lastName = (TextView) findViewById(R.id.DisplayTextLast);
-        lastName.setText(receivingIntent.getExtras().getString("last"));
         street = (TextView) findViewById(R.id.DisplayTextStreet);
-        street.setText(receivingIntent.getExtras().getString("street"));
+        numero = (TextView) findViewById(R.id.DisplayTextNum);
         colonia = (TextView) findViewById(R.id.DisplayTextColonia);
-        colonia.setText(receivingIntent.getExtras().getString("colonia"));
         delegacion = (TextView) findViewById(R.id.DisplayTextDelegacion);
-        delegacion.setText(receivingIntent.getExtras().getString("delegacion"));
         juzgado = (TextView) findViewById(R.id.DisplayTextJuzgado);
-        juzgado.setText(receivingIntent.getExtras().getString("juzgado"));
-        delegJuzgado = (TextView) findViewById(R.id.DisplayTextDelegJuzgado);
-        delegJuzgado.setText(receivingIntent.getExtras().getString("delegacionDeLista"));
-        nombJuzgado = (TextView) findViewById(R.id.DisplayTextNombJuzgado);
-        nombJuzgado.setText(receivingIntent.getExtras().getString("numeroLista"));
-        final String body = name.getText().toString() + lastName.getText().toString() + street.getText().toString()
-                        + colonia.getText().toString() + delegacion.getText().toString() + juzgado.getText().toString()
-                            + delegJuzgado.getText().toString() + nombJuzgado.getText().toString();
+        itinerante = (TextView) findViewById(R.id.DisplayTextItinerante);
+        if (receivingIntent.getExtras() != null) {
+
+            savedName = receivingIntent.getExtras().getString("name");
+            savedLast = receivingIntent.getExtras().getString("last");
+            savedStreet = receivingIntent.getExtras().getString("street");
+            savedNumero = receivingIntent.getExtras().getString("numero");
+            savedColonia = receivingIntent.getExtras().getString("colonia");
+            savedDelegacion = receivingIntent.getExtras().getString("delegacion");
+            savedJuzgado = receivingIntent.getExtras().getString("juzgado");
+            savedItinerante = receivingIntent.getExtras().getString("itinerante");
+        }
+        name.setText(savedName);
+        lastName.setText(savedLast);
+        street.setText(savedStreet);
+        numero.setText(savedNumero);
+        colonia.setText(savedColonia);
+        delegacion.setText(savedDelegacion);
+        juzgado.setText(savedJuzgado);
+        itinerante.setText(savedItinerante);
         final Button send = (Button) this.findViewById(R.id.ButtonSendPayment);
         send.setOnClickListener(new View.OnClickListener() {
 
@@ -77,6 +94,8 @@ public class ConfirmarActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_payment, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

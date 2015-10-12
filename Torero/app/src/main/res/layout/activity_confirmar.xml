@@ -6,11 +6,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.toreo.torero.PaymentActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@string/solicita_texto"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
     <TextView
         android:id="@+id/DisplayTextName"
         android:layout_height="wrap_content"
@@ -28,12 +23,6 @@
     </TextView>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:textSize="20dp"
-        android:text="Direccion"/>
 
     <TextView
         android:id="@+id/DisplayTextStreet"
@@ -77,21 +66,13 @@
     </TextView>
 
     <TextView
-        android:id="@+id/DisplayTextDelegJuzgado"
+        android:id="@+id/DisplayTextItinerante"
         android:layout_marginTop="320dp"
         android:layout_marginLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"/>
 
-
-    <TextView
-        android:id="@+id/DisplayTextNombJuzgado"
-        android:layout_marginTop="360dp"
-        android:layout_marginLeft="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"/>
 
     <Button
         android:id="@+id/ButtonSendPayment"
