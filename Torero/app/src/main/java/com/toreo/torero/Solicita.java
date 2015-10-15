@@ -54,6 +54,10 @@ public class Solicita extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_solicita, container, false);
+        ArrayAdapter adapterDeleg = ArrayAdapter.createFromResource(getActivity(), R.array.Delegaciones, R.layout.spinner_item);
+        ArrayAdapter adapterItinerantes = ArrayAdapter.createFromResource(getActivity(), R.array.Itinerantes, R.layout.spinner_item);
+        adapterDeleg.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterItinerantes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         nameField = (EditText) rootView.findViewById(R.id.EditTextName);
         lastField = (EditText) rootView.findViewById(R.id.EditTextLast);
         streetField = (EditText) rootView.findViewById(R.id.EditTextStreet);
@@ -62,6 +66,9 @@ public class Solicita extends Fragment {
         delegSpinner = (Spinner) rootView.findViewById(R.id.spinnerDelegacion);
         juzgadoSpinner = (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
         itineranteSpinner = (Spinner) rootView.findViewById(R.id.spinnerItinerante);
+        delegSpinner.setAdapter(adapterDeleg);
+        juzgadoSpinner.setAdapter(adapterDeleg);
+        itineranteSpinner.setAdapter(adapterDeleg);
         buttonSumbit = (Button) rootView.findViewById(R.id.ButtonSendForm);
         delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -69,8 +76,7 @@ public class Solicita extends Fragment {
                 String firstChoice = delegSpinner.getSelectedItem().toString().replaceAll("\\s", "").replaceAll("[^A-Za-z\\s]", "");
                 Log.d("This is the returned string", firstChoice);
                 int fid = getResources().getIdentifier(firstChoice, "array", getActivity().getBaseContext().getPackageName());
-                ArrayAdapter adapter = ArrayAdapter.createFromResource(
-                       getActivity(), fid, android.R.layout.simple_spinner_item);
+                ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), fid, R.layout.spinner_item);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 juzgadoSpinner.setAdapter(adapter);
 
@@ -81,6 +87,7 @@ public class Solicita extends Fragment {
 
             }
         });
+
 
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -27,8 +27,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v13:22.2.0'
+    compile 'com.android.support:appcompat-v7:19.1.+'
     compile 'io.conekta:tokenizer:1.0'
     compile files('libs/activation.jar')
 }
-
-

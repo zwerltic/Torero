@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.toreo.torero" >
 
-    <uses-sdk tools:overrideLibrary="io.conekta.tokenizer" />
+    <uses-sdk tools:overrideLibrary="io.conekta.tokenizer"
+        android:minSdkVersion="7"
+        android:targetSdkVersion="22" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,6 +18,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
+            android
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

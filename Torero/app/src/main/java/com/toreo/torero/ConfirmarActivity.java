@@ -26,14 +26,14 @@ public class ConfirmarActivity extends Activity {
     TextView juzgado;
     TextView itinerante;
 
-    public static String savedName;
-    public static String savedLast;
-    public static String savedStreet;
-    public static String savedNumero;
-    public static String savedColonia;
-    public static String savedDelegacion;
-    public static String savedJuzgado;
-    public static String savedItinerante;
+    public static String savedName       = "Nombre     : ";
+    public static String savedLast       = "Apellido   : ";
+    public static String savedStreet     = "Calle      : ";
+    public static String savedNumero     = "Número     : ";
+    public static String savedColonia    = "Colonia    : ";
+    public static String savedDelegacion = "Delegación : ";
+    public static String savedJuzgado    = "Juzgado    : ";
+    public static String savedItinerante = "Itinerante : ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +50,14 @@ public class ConfirmarActivity extends Activity {
         itinerante = (TextView) findViewById(R.id.DisplayTextItinerante);
         if (receivingIntent.getExtras() != null) {
 
-            savedName = receivingIntent.getExtras().getString("name");
-            savedLast = receivingIntent.getExtras().getString("last");
-            savedStreet = receivingIntent.getExtras().getString("street");
-            savedNumero = receivingIntent.getExtras().getString("numero");
-            savedColonia = receivingIntent.getExtras().getString("colonia");
-            savedDelegacion = receivingIntent.getExtras().getString("delegacion");
-            savedJuzgado = receivingIntent.getExtras().getString("juzgado");
-            savedItinerante = receivingIntent.getExtras().getString("itinerante");
+            savedName += receivingIntent.getExtras().getString("name");
+            savedLast += receivingIntent.getExtras().getString("last");
+            savedStreet += receivingIntent.getExtras().getString("street");
+            savedNumero += receivingIntent.getExtras().getString("numero");
+            savedColonia += receivingIntent.getExtras().getString("colonia");
+            savedDelegacion += receivingIntent.getExtras().getString("delegacion");
+            savedJuzgado += receivingIntent.getExtras().getString("juzgado");
+            savedItinerante += receivingIntent.getExtras().getString("itinerante");
         }
         name.setText(savedName);
         lastName.setText(savedLast);

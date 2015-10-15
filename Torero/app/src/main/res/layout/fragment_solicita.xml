@@ -1,122 +1,178 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.toreo.torero.solicita">
+    android:layout_height="match_parent"  android:orientation="vertical" android:background="#000099" tools:context="com.toreo.torero.solicita">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@string/solicita_texto"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/EditTextName"
-        android:layout_height="wrap_content"
+        android:textColorHint="@color/form_color"
         android:hint="@string/nombre_solicita"
         android:inputType="textPersonName"
-        android:layout_width="fill_parent"
-        android:layout_marginTop="40dp">
+        android:textSize="18dp"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1">
     </EditText>
 
     <EditText
         android:id="@+id/EditTextLast"
-        android:layout_height="wrap_content"
         android:hint="@string/apellido_solicita"
         android:inputType="textPersonName"
-        android:layout_width="fill_parent"
-        android:layout_marginTop="80dp">
+        android:textSize="18dp"
+        android:textColorHint="@color/form_color"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1">
     </EditText>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:textSize="20dp"
-        android:text="Direccion"/>
+        android:id="@+id/TextDireccion"
+        android:textSize="18dp"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:text="Dirección"/>
 
     <EditText
         android:id="@+id/EditTextStreet"
-        android:layout_height="wrap_content"
         android:hint="@string/calle_solicita"
         android:inputType="textPersonName"
-        android:layout_width="300dp"
-        android:layout_marginTop="160dp">
+        android:textSize="18dp"
+        android:textColorHint="@color/form_color"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1">
     </EditText>
 
     <EditText
         android:id="@+id/EditTextNumb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
         android:hint="@string/numero_solicita"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="160dp"/>
+        android:textSize="18dp"
+        android:textColorHint="@color/form_color"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"/>
 
     <EditText
         android:id="@+id/EditTextColonia"
         android:hint="@string/colonia_solicita"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"/>
-    <EditText
-        android:id="@+id/EditTextDelegacion"
-        android:hint="@string/delegacion_solicita"
-        android:layout_width="fill_parent"
-        android:layout_marginTop="240dp"
-        android:layout_height="wrap_content" />
+        android:textSize="18dp"
+        android:textColorHint="@color/form_color"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"/>
     <TextView
-        android:id="@+id/TextJuzgado"
-        android:layout_marginTop="280dp"
-        android:hint="@string/juzgado_solicita"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/TextJCivico"
+        android:textSize="18dp"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:text="Juzgado Cívico"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/TextDeleg"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Delegación"/>
 
-    <TextView
-        android:layout_marginTop="320dp"
-        android:layout_marginLeft="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delegacion o Juzgado"
-        android:textSize="18dp"/>
+        <Spinner
+            android:id="@+id/spinnerDelegacion"
+            android:entries="@array/Delegaciones"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spinnerDelegacion"
-        android:layout_marginTop="320dp"
-        android:layout_marginLeft="180dp"
-        android:entries="@array/Delegaciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_marginTop="360dp"
-        android:layout_marginLeft="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Numero o nombre"
-        android:textSize="18dp"/>
-    <Spinner
-        android:id="@+id/spinnerJuzgado"
-        android:layout_marginTop="360dp"
-        android:layout_marginLeft="180dp"
-        android:entries="@array/Xochimilco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Spinner
-        android:id="@+id/spinnerItinerante"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="180dp"
-        android:entries="@array/Itinerantes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/TextJuzgado"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Juzgado \n       o"/>
+        <Spinner
+            android:id="@+id/spinnerJuzgado"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:entries="@array/Xochimilco"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/TextItinerante"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Itinerante"/>
+        <Spinner
+            android:id="@+id/spinnerItinerante"
+            android:textSize="18dp"
+            android:textColor="@color/form_color"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:entries="@array/Itinerantes"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/ButtonSendForm"
-        android:layout_height="wrap_content"
-        android:layout_width="120dp"
+        android:textSize="18dp"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:text="@string/button"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="20dp"
         android:background="#4CAF50">
     </Button>
 
-</FrameLayout>
+</LinearLayout>
 

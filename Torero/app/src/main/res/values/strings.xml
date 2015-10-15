@@ -62,8 +62,8 @@ casa.</string>
     <string name="calle_solicita" >Calle</string>
     <string name="numero_solicita">Num.</string>
     <string name="colonia_solicita">Colonia</string>
-    <string name="juzgado_solicita">Juzgado Civico</string>
-    <string name="delegacion_solicita">Delegacion</string>
+    <string name="juzgado_solicita">Juzgado Cívico</string>
+    <string name="delegacion_solicita">Delegación</string>
     <string name="apellido_solicita">Apellidos</string>
     <string name="button">ACEPTAR</string>
     <string name="button_pago">Pagar</string>
