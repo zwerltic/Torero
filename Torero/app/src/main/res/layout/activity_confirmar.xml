@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000099"
+    android:background="@color/background_choice"
     android:orientation="vertical"
     tools:context="com.toreo.torero.PaymentActivity">
 
@@ -93,7 +93,7 @@
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_weight="1">
+        android:layout_weight="1.5">
     </TextView>
 
     <TextView
@@ -104,15 +104,18 @@
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1.5"/>
 
 
     <Button
         android:id="@+id/ButtonSendPayment"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:textSize="18dp"
+        android:textColor="@color/form_color"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:text="@string/button"
-        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
         android:background="#4CAF50">
     </Button>
 
