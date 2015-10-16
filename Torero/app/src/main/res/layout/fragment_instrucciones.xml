@@ -1,8 +1,26 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.toreo.torero.Instrucciones">
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/instrucciones_toreo" />'
+    android:layout_height="match_parent" android:background="@color/background_choice"
+    android:orientation="vertical" tools:context="com.toreo.torero.Acerca">
 
 
-</FrameLayout>
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/rsz_pantalla2"
+        android:scaleType="fitXY"
+        android:layout_weight="6"/>
+    <TextView
+        android:text="@string/instrucciones_torero"
+        android:layout_width="300dp"
+        android:textSize="16dp"
+        android:gravity="center|top"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/form_color"
+        android:layout_marginTop="30dp" />
+
+</LinearLayout>

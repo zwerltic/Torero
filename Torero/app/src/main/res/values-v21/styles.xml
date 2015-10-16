@@ -1,18 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light">
+    <style name="CustomTheme" parent="android:Theme.Material.Light">
         <!-- Customize your theme here. -->
         <!-- Main theme colors -->
         <!--   your app branding color for the app bar -->
-        <item name="android:actionBarTabBarStyle">@style/ActionBarTab</item>
         <!--<item name="android:actionBarTabStyle">@style/ActionBarTabBar</item>-->
+        <item name="android:actionBarStyle">@style/MyActionBarStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/TabTextStyle</item>
         <item name="android:colorPrimary">@color/primary</item>
         <!--   darker variant for the status bar and contextual app bars -->
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="android:colorAccent">@color/accent</item>
-        <item name="android:textColor">#000000</item>
     </style>
 
     <!--<style name="ActionBarTabBar" parent="@android:style/Widget.Holo.Light.ActionBar.TabBar">-->
@@ -21,9 +21,18 @@
     <!--</style>-->
 
 
-    <style name="ActionBarTab" parent="@android:style/Widget.Material.Light.ActionBar.TabView">
+    <style name="MyActionBarStyle" parent="@android:style/Widget.Material.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/TitleTextStyle</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:backgroundStacked">@color/primary</item>
+        <item name="android:backgroundSplit">@color/primary</item>
+        <item name="android:textColor">@color/form_color</item>
+    </style>
+
+    <style name="TabTextStyle"
+        parent="@android:style/Widget.Material.Light.ActionBar.TabText">
+        <item name="android:textColor">@color/form_color</item>
     </style>
 
 

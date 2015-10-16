@@ -1,16 +1,52 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.toreo.torero.Acerca">
+    android:layout_height="match_parent" android:background="@color/background_choice"
+    android:orientation="vertical" tools:context="com.toreo.torero.Acerca">
 
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@string/acerca_de_fragment"
-        android:textSize="22dp"
-        android:textIsSelectable="true"
-        android:singleLine="false"
-        android:password="false"
-        android:phoneNumber="false"
-        android:layout_gravity="center_horizontal|top" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/rsz_pantalla1"
+        android:scaleType="fitXY"
+        android:layout_weight="6"/>
 
-</FrameLayout>
+    <TextView
+        android:text="@string/acerca_de_fragment"
+        android:layout_width="300dp"
+        android:textSize="24dp"
+        android:gravity="center|top"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:textColor="@color/form_color"
+        android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:text="Teléfono celular: 554144-1779"
+            android:textColor="@color/form_color"
+            android:layout_width="0dp"
+            android:autoLink="all"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:text="Correo electrónico: toreroapp@gmail.com"
+            android:textColor="@color/form_color"
+            android:autoLink="email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</LinearLayout>

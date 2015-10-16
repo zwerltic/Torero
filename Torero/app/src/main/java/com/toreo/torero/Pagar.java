@@ -56,6 +56,7 @@ public class Pagar extends Activity {
     private static String colonia;
     private static String deleg;
     private static String juzgado;
+    private static String itinerante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,69 +70,68 @@ public class Pagar extends Activity {
         colonia = receivingIntent.getExtras().getString("colonia");
         deleg = receivingIntent.getExtras().getString("delegacion");
         juzgado = receivingIntent.getExtras().getString("juzgado");
+        itinerante = receivingIntent.getExtras().getString("itinerante");
     }
 
 
     public void tokenizeCard(View view) {
-        Intent sendingIntent = new Intent(Pagar.this, Gracias.class);
-        startActivity(sendingIntent);
-//        Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
-//        EditText nameText = (EditText) this.findViewById(R.id.nameText);
-//        EditText numberText = (EditText) this.findViewById(R.id.numberText);
-//        EditText monthText = (EditText) this.findViewById(R.id.monthText);
-//        EditText yearText = (EditText) this.findViewById(R.id.yearText);
-//        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
-//        Log.d("Did the tokenizer", "Yeah!");
-//        try {
-//            JSONObject card = new JSONObject(
-//                    "{'card':" +
-//                            "{" +
-//                            "'name': '" + String.valueOf(nameText.getText()) + "'," +
-//                            "'number': '" + String.valueOf(numberText.getText()).trim() + "'," +
-//                            "'exp_month': '" + String.valueOf(monthText.getText()).trim() + "'," +
-//                            "'exp_year': '" + String.valueOf(yearText.getText()).trim() + "'," +
-//                            "'cvc': '" + String.valueOf(cvcText.getText()).trim() + "'" +
-//                            "}" +
-//                            "}");
-//            conekta.tokenizeCard(card,
-//                    new TokenizerCallback() {
-//                        public void success(final Token token) {
-//                            // TODO: Send token to your web service to create the charge∫
-//                            try {
-//                                new postTask().execute(token);
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//
-//
-//                        }
-//
-//                        public void failure(Exception error) {
-//                            // TODO: Output the error in your app
-//                            String result = null;
-//                            if (error instanceof Error)
-//                                result = ((Error) error).message_to_purchaser;
-//                            else
-//                                result = error.getMessage();
-//                            AlertDialog alertDialog;
-//                            alertDialog = new AlertDialog.Builder(Pagar.this).create();
-//                            alertDialog.setTitle("Hubo un problema");
-//                            alertDialog.setMessage(result);
-//                            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
-//                                @Override
-//                                public void onClick(DialogInterface dialog, int which) {
-//
-//                                }
-//                            });
-//                            alertDialog.show();
-//                            Log.d("ERROR: ", result);
-//                        }
-//
-//
-//                    });
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+        Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
+        EditText nameText = (EditText) this.findViewById(R.id.nameText);
+        EditText numberText = (EditText) this.findViewById(R.id.numberText);
+        EditText monthText = (EditText) this.findViewById(R.id.monthText);
+        EditText yearText = (EditText) this.findViewById(R.id.yearText);
+        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
+        Log.d("Did the tokenizer", "Yeah!");
+        try {
+            JSONObject card = new JSONObject(
+                    "{'card':" +
+                            "{" +
+                            "'name': '" + String.valueOf(nameText.getText()) + "'," +
+                            "'number': '" + String.valueOf(numberText.getText()).trim() + "'," +
+                            "'exp_month': '" + String.valueOf(monthText.getText()).trim() + "'," +
+                            "'exp_year': '" + String.valueOf(yearText.getText()).trim() + "'," +
+                            "'cvc': '" + String.valueOf(cvcText.getText()).trim() + "'" +
+                            "}" +
+                            "}");
+            conekta.tokenizeCard(card,
+                    new TokenizerCallback() {
+                        public void success(final Token token) {
+                            // TODO: Send token to your web service to create the charge∫
+                            try {
+                                new postTask().execute(token);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+
+                        }
+
+                        public void failure(Exception error) {
+                            // TODO: Output the error in your app
+                            String result = null;
+                            if (error instanceof Error)
+                                result = ((Error) error).message_to_purchaser;
+                            else
+                                result = error.getMessage();
+                            AlertDialog alertDialog;
+                            alertDialog = new AlertDialog.Builder(Pagar.this).create();
+                            alertDialog.setTitle("Hubo un problema");
+                            alertDialog.setMessage(result);
+                            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            alertDialog.show();
+                            Log.d("ERROR: ", result);
+                        }
+
+
+                    });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
    }
 
 
@@ -184,7 +184,7 @@ public class Pagar extends Activity {
                 object.put("colonia", colonia);
                 object.put("deleg", deleg);
                 object.put("juzgado", juzgado);
-                //object.put("itinerante", itinerante);
+                object.put("itinerante", itinerante);
             } catch (Exception ex) {
 
             }

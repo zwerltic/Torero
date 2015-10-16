@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Torero</string>
+    <string name="app_name">Toreado</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -8,56 +8,17 @@
     <string name="title_section1">Acerca de</string>
     <string name="title_section2">Intrucciones</string>
     <string name="title_section3">Solicita</string>
-    <string name="acerca_de_fragment">  Torero es una empresa \ndedicada a facilitar el \nacceso a la justicia a la \npoblación
-                                        ofreciendo el \nservicio de amparo a \nlos ciudadanos cuyos \nderechos constitucionales
-                                        \nfueron violados por el \nprograma alcoholimetro</string>
-    <string name="instrucciones_toreo">¿Cómo tramitar tu amparo de
+    <string name="acerca_de_fragment">  Toreado es una empresa dedicada a facilitar el acceso a la justicia a la población ofreciendo el servicio de amparo a los ciudadanos cuyos derechos constitucionales fueron violados por el programa alcoholímetro.</string>
 
-forma rápida y segura?
-
-1. Envía tus datos y el pago
-
-correspondiente.
-
-2. Un representante de
-
-"Torero" redactará y presentará
-
-de inmediato tu amparo.
-
-3. Un juez de distrito aprobará
-
-la suspensión de tus horas en
-
-"el torito" o "la vaquita".
-
-4. Un secretario actuario será
-
-enviado a notificar la
-
-suspensión a la autoridad
-
-correspondiente.
-
-5. Alcanzarás la libertad y
-
-podrás descansar tranquilo en
-
-6. En caso de que el juez
-
-determine que deberás
-
-cumplir posteriormente con
-
-horas de arresto, se te
-
-notificará en el domicilio que
-
-nos enviaste.
-
-casa.</string>
+	<string name="instrucciones_torero">INSTRUCCIONES DE USO\n\n
+        1. Envía tus datos y el pago de 2,500.00 M. N.\n
+        2. Un representante de "Toreado" redactará y presentará de inmediato tu amparo.\n
+        3. Un juez de distrito aprobará la suspensión de tus horas en "el torito" o "la vaquita".\n
+        4. Un secretario actuario será enviado a notificar la suspensión a la autoridad correspondiente.\n
+        5. Alcanzarás la libertad y podrás descansar tranquilo en casa.\n
+        6. En caso de que el juez determine que deberás cumplir posteriormente con horas de arresto, se te notificará en el domicilio que nos enviaste.</string>
     <string name="solicita_texto">Datos para solicitar</string>
-    <string name="graicas_texto">Gracias </string>
+    <string name="graicas_texto">Tu pago fue realizado con éxito! Enseguida un representante de Toreado presentará tu amparo ante la autoridad competente. </string>
     <string name="nombre_solicita">Nombre</string>
     <string name="calle_solicita" >Calle</string>
     <string name="numero_solicita">Num.</string>
@@ -135,43 +96,43 @@ casa.</string>
 
 Coyoacán, CP. 04700, Distrito Federal, es el responsable del uso y protección de sus datos
 
-personales, y al respecto le informamos lo siguiente:
+personales, y al respecto le informamos lo siguiente:\n
 
-I. Los datos personales recabados en esta aplicación serán utilizados para las siguientes
+\tI. Los datos personales recabados en esta aplicación serán utilizados para las siguientes
 
-finalidades:
+finalidades:\n
 
-1. Redacción de Amparo contra alcoholimetro.
+\t\t1. Redacción de Amparo contra alcoholimetro.\n
 
-2. Presentación de Amparo contra alcoholimetro.
+\t\t2. Presentación de Amparo contra alcoholimetro.\n
 
-3. Cobranza.
+\t\t3. Cobranza.\n
 
-4. Información.
+\t\t4. Información.\n
 
-5. Aclaración.
+\t\t5. Aclaración.\n\n
 
-II. Los datos datos necesarios para llevar a cabo las finalidades descritas en el presente aviso de
+\tII. Los datos datos necesarios para llevar a cabo las finalidades descritas en el presente aviso de
 
-privacidad son los siguientes:
+privacidad son los siguientes:\n
 
-1. Nombre.
+\t\t1. Nombre.\n
 
-2. Dirección.
+\t\t2. Dirección.\n
 
-3. Juzgado Cívico en el que se lleva procedimiento.
+\t\t3. Juzgado Cívico en el que se lleva procedimiento.\n
 
-4. Teléfono Celular.
+\t\t4. Teléfono Celular.\n\n
 
-III. Como opción y medio que Torero ofrezce a los titulares para limitar el uso o divulgación de los
+\tIII. Como opción y medio que Torero ofrezce a los titulares para limitar el uso o divulgación de los
 
 datos Torero se obliga a eliminar los datos personales utilizados tras concluir el servicio. Por lo
 
 tanto, el titular deberá brindar sus datos y aceptar este aviso de privacidad cada vez que solicite el
 
-servicio.
+servicio.\n\n
 
-IV. Para acceder, rectificar, cancelar u oponerse al uso de los datos personales:
+\tIV. Para acceder, rectificar, cancelar u oponerse al uso de los datos personales:
 
 Usted tiene derecho a conocer que datos personales tenemos de usted, para que los utilizamos y
 
@@ -191,23 +152,23 @@ alcoholimetro (Cancelación). Finalmente, tiene derecho a oponerse al uso de sus
 
 personales para fines específicos (Oposición). Estos derechos son conocidos como derechos
 
-Arco.
+Arco.\n
 
-Para ejercer alguno de los derechos mencionados anteriormente el titular deberá comunicarse a
+\tPara ejercer alguno de los derechos mencionados anteriormente el titular deberá comunicarse a
 
-Torero:
+Torero:\n
 
-Teléfono celular: 044-55-41-44-17-79
+\t\tTeléfono celular: 044-55-41-44-17-79\n
 
-Correo electrónico: toreroapp@gmail.com
+\t\tCorreo electrónico: toreroapp@gmail.com\n\n
 
-V. Torero no transferirá los datos brindados por los titulares, únicamente hará entrega de el
+\tV. Torero no transferirá los datos brindados por los titulares, únicamente hará entrega de el
 
 nombre y domicilio del titular a la autoridad correspondiente para conocer del amparo contra el
 
-alcoholimetro.
+alcoholimetro.\n\n
 
-VI. Torero notificará por medio de esta aplicación cualquier cambio realizado en este Aviso de
+\tVI. Torero notificará por medio de esta aplicación cualquier cambio realizado en este Aviso de
 
 Privacidad, esto se hará de conformidad con lo previsto en la Ley Federal de Protección de Datos
 

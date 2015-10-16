@@ -67,8 +67,7 @@ public class Solicita extends Fragment {
         juzgadoSpinner = (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
         itineranteSpinner = (Spinner) rootView.findViewById(R.id.spinnerItinerante);
         delegSpinner.setAdapter(adapterDeleg);
-        juzgadoSpinner.setAdapter(adapterItinerantes);
-        itineranteSpinner.setAdapter(adapterDeleg);
+        itineranteSpinner.setAdapter(adapterItinerantes);
         buttonSumbit = (Button) rootView.findViewById(R.id.ButtonSendForm);
         delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
