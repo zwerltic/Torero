@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="@color/background_choice"
     android:orientation="vertical"
-    tools:context="com.toreo.torero.Terminos">
+    tools:context="com.abogadoDigital.com.Terminos">
 
     <TextView   android:id="@+id/textView5"
         android:text="Aviso de Privacidad"

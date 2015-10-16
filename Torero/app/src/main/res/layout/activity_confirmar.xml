@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_choice"
     android:orientation="vertical"
-    tools:context="com.toreo.torero.PaymentActivity">
+    tools:context="com.com.abogadoDigital.PaymentActivity">
 
     <TextView
         android:id="@+id/DisplayTextName"

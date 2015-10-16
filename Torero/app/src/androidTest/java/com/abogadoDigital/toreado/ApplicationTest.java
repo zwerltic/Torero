@@ -1,4 +1,4 @@
-package com.toreo.torero;
+package com.abogadoDigital.toreado;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

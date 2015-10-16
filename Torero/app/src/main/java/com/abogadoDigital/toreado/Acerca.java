@@ -1,4 +1,4 @@
-package com.toreo.torero;
+package com.abogadoDigital.toreado;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,8 +36,6 @@ public class Acerca extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_acerca, container, false);
-        String[] textArray = getResources().getStringArray(R.array.Delegaciones);
-        int finId = getResources().getIdentifier("Delegaciones", "array", getActivity().getPackageName());
 
         return rootView;
     }

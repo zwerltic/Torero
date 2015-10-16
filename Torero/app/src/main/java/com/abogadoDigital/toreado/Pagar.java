@@ -1,4 +1,4 @@
-package com.toreo.torero;
+package com.abogadoDigital.toreado;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -48,9 +48,9 @@ public class Pagar extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pagar);
+        setContentView(com.abogadoDigital.toreado.R.layout.activity_pagar);
         Intent receivingIntent = getIntent();
-        payButton = (Button) findViewById(R.id.buttonPay);
+        payButton = (Button) findViewById(com.abogadoDigital.toreado.R.id.buttonPay);
 //        name = receivingIntent.getExtras().getString("name");
 //        last = receivingIntent.getExtras().getString("last");
 //        street = receivingIntent.getExtras().getString("street");
@@ -65,11 +65,11 @@ public class Pagar extends Activity {
     public void tokenizeCard(View view) {
         payButton.setEnabled(false);
         Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
-        EditText nameText = (EditText) this.findViewById(R.id.nameText);
-        EditText numberText = (EditText) this.findViewById(R.id.numberText);
-        EditText monthText = (EditText) this.findViewById(R.id.monthText);
-        EditText yearText = (EditText) this.findViewById(R.id.yearText);
-        EditText cvcText = (EditText) this.findViewById(R.id.cvcText);
+        EditText nameText = (EditText) this.findViewById(com.abogadoDigital.toreado.R.id.nameText);
+        EditText numberText = (EditText) this.findViewById(com.abogadoDigital.toreado.R.id.numberText);
+        EditText monthText = (EditText) this.findViewById(com.abogadoDigital.toreado.R.id.monthText);
+        EditText yearText = (EditText) this.findViewById(com.abogadoDigital.toreado.R.id.yearText);
+        EditText cvcText = (EditText) this.findViewById(com.abogadoDigital.toreado.R.id.cvcText);
         Log.d("Did the tokenizer", "Yeah!");
         try {
             JSONObject card = new JSONObject(

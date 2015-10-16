@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background_choice"
-    tools:context="com.toreo.torero.Gracias">
+    tools:context="com.abogadoDigital.com.Gracias">
 
     <TextView android:text="@string/graicas_texto" android:layout_width="282dp"
         android:textSize="24dp"

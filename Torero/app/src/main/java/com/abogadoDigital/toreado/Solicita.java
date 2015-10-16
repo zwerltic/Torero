@@ -1,8 +1,6 @@
-package com.toreo.torero;
+package com.abogadoDigital.toreado;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -71,29 +69,29 @@ public class Solicita extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_solicita, container, false);
-        ArrayAdapter adapterDeleg = ArrayAdapter.createFromResource(getActivity(), R.array.Delegaciones, R.layout.spinner_item);
-        ArrayAdapter adapterItinerantes = ArrayAdapter.createFromResource(getActivity(), R.array.Itinerantes, R.layout.spinner_item);
+        final View rootView = inflater.inflate(com.abogadoDigital.toreado.R.layout.fragment_solicita, container, false);
+        ArrayAdapter adapterDeleg = ArrayAdapter.createFromResource(getActivity(), com.abogadoDigital.toreado.R.array.Delegaciones, com.abogadoDigital.toreado.R.layout.spinner_item);
+        ArrayAdapter adapterItinerantes = ArrayAdapter.createFromResource(getActivity(), com.abogadoDigital.toreado.R.array.Itinerantes, com.abogadoDigital.toreado.R.layout.spinner_item);
         adapterDeleg.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterItinerantes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        nameField = (EditText) rootView.findViewById(R.id.EditTextName);
-        lastField = (EditText) rootView.findViewById(R.id.EditTextLast);
-        streetField = (EditText) rootView.findViewById(R.id.EditTextStreet);
-        numField = (EditText) rootView.findViewById(R.id.EditTextNumb);
-        coloniaField = (EditText) rootView.findViewById(R.id.EditTextColonia);
-        delegSpinner = (Spinner) rootView.findViewById(R.id.spinnerDelegacion);
-        juzgadoSpinner = (Spinner) rootView.findViewById(R.id.spinnerJuzgado);
-        itineranteSpinner = (Spinner) rootView.findViewById(R.id.spinnerItinerante);
+        nameField = (EditText) rootView.findViewById(com.abogadoDigital.toreado.R.id.EditTextName);
+        lastField = (EditText) rootView.findViewById(com.abogadoDigital.toreado.R.id.EditTextLast);
+        streetField = (EditText) rootView.findViewById(com.abogadoDigital.toreado.R.id.EditTextStreet);
+        numField = (EditText) rootView.findViewById(com.abogadoDigital.toreado.R.id.EditTextNumb);
+        coloniaField = (EditText) rootView.findViewById(com.abogadoDigital.toreado.R.id.EditTextColonia);
+        delegSpinner = (Spinner) rootView.findViewById(com.abogadoDigital.toreado.R.id.spinnerDelegacion);
+        juzgadoSpinner = (Spinner) rootView.findViewById(com.abogadoDigital.toreado.R.id.spinnerJuzgado);
+        itineranteSpinner = (Spinner) rootView.findViewById(com.abogadoDigital.toreado.R.id.spinnerItinerante);
         delegSpinner.setAdapter(adapterDeleg);
         itineranteSpinner.setAdapter(adapterItinerantes);
-        buttonSumbit = (Button) rootView.findViewById(R.id.ButtonSendForm);
+        buttonSumbit = (Button) rootView.findViewById(com.abogadoDigital.toreado.R.id.ButtonSendForm);
         delegSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String firstChoice = delegSpinner.getSelectedItem().toString().replaceAll("\\s", "").replaceAll("[^A-Za-z\\s]", "");
                 Log.d("This is the returned string", firstChoice);
                 int fid = getResources().getIdentifier(firstChoice, "array", getActivity().getBaseContext().getPackageName());
-                ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), fid, R.layout.spinner_item);
+                ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), fid, com.abogadoDigital.toreado.R.layout.spinner_item);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 juzgadoSpinner.setAdapter(adapter);
 
@@ -108,15 +106,6 @@ public class Solicita extends Fragment {
 
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-//                String name = " ";
-//                String last = " ";
-//                String street = " ";
-//                String numb = " ";
-//                String colonia = " ";
-//                String deleg = " ";
-//                String juzgado = " ";
-//                String itinerante = " ";
-//                name += nameField.getText().toString();
 
                 savedName += nameField.getText().toString();
                 savedLast += lastField.getText().toString();
@@ -127,14 +116,6 @@ public class Solicita extends Fragment {
                 savedJuzgado += juzgadoSpinner.getSelectedItem().toString();
                 savedItinerante += itineranteSpinner.getSelectedItem().toString();
                 Intent sendingIntent = new Intent(getActivity(), ConfirmarActivity.class);
-//                sendingIntent.putExtra("name", name);
-//                sendingIntent.putExtra("last", last);
-//                sendingIntent.putExtra("street", street);
-//                sendingIntent.putExtra("numero", numb);
-//                sendingIntent.putExtra("colonia", colonia);
-//                sendingIntent.putExtra("delegacion", deleg);
-//                sendingIntent.putExtra("juzgado", juzgado);
-//                sendingIntent.putExtra("itinerante", itinerante);
                 startActivity(sendingIntent);
             }
 
