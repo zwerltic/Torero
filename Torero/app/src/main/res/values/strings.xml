@@ -3,15 +3,15 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">Torero</string>
+    <string name="title_activity_main">Toreado</string>
 
     <string name="title_section1">Acerca de</string>
-    <string name="title_section2">Intrucciones</string>
+    <string name="title_section2">Instrucciones</string>
     <string name="title_section3">Solicita</string>
     <string name="acerca_de_fragment">  Toreado es una empresa dedicada a facilitar el acceso a la justicia a la población ofreciendo el servicio de amparo a los ciudadanos cuyos derechos constitucionales fueron violados por el programa alcoholímetro.</string>
 
 	<string name="instrucciones_torero">INSTRUCCIONES DE USO\n\n
-        1. Envía tus datos y el pago de 2,500.00 M. N.\n
+        1. Envía tus datos y paga $2,500 pesos con tu tarjeta de crédito o débito.\n
         2. Un representante de "Toreado" redactará y presentará de inmediato tu amparo.\n
         3. Un juez de distrito aprobará la suspensión de tus horas en "el torito" o "la vaquita".\n
         4. Un secretario actuario será enviado a notificar la suspensión a la autoridad correspondiente.\n

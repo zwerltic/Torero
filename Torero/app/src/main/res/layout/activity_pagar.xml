@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="4242424242424242"
+            android:text="xxxx-xxxx-xxxx-xxxx"
             android:inputType="number"/>
 
     </LinearLayout>
@@ -90,6 +90,7 @@
 
         <EditText   android:id="@+id/cvcText"
             android:textSize="18dp"
+            android:hint="CVC"
             android:inputType="number"
             android:textColorHint="@color/form_color"
             android:textColor="@color/form_color"
@@ -129,7 +130,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonPay"
         android:textSize="18dp"
         android:onClick="tokenizeCard"
         android:textColor="@color/form_color"
@@ -138,7 +139,7 @@
         android:layout_weight="1"
         android:text="PAGAR"
         android:layout_marginTop="20dp"
-        android:background="#ff29af86"/>
+        android:background="@drawable/selector_pagar"/>
 
 
 

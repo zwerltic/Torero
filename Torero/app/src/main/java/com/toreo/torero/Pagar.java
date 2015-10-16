@@ -11,35 +11,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.util.Log;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.Properties;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import io.conekta.tokenizer.Tokenizer;
 import io.conekta.tokenizer.TokenizerCallback;
@@ -58,23 +43,27 @@ public class Pagar extends Activity {
     private static String juzgado;
     private static String itinerante;
 
+    Button payButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagar);
         Intent receivingIntent = getIntent();
-        name = receivingIntent.getExtras().getString("name");
-        last = receivingIntent.getExtras().getString("last");
-        street = receivingIntent.getExtras().getString("street");
-        numb = receivingIntent.getExtras().getString("number");
-        colonia = receivingIntent.getExtras().getString("colonia");
-        deleg = receivingIntent.getExtras().getString("delegacion");
-        juzgado = receivingIntent.getExtras().getString("juzgado");
-        itinerante = receivingIntent.getExtras().getString("itinerante");
+        payButton = (Button) findViewById(R.id.buttonPay);
+//        name = receivingIntent.getExtras().getString("name");
+//        last = receivingIntent.getExtras().getString("last");
+//        street = receivingIntent.getExtras().getString("street");
+//        numb = receivingIntent.getExtras().getString("number");
+//        colonia = receivingIntent.getExtras().getString("colonia");
+//        deleg = receivingIntent.getExtras().getString("delegacion");
+//        juzgado = receivingIntent.getExtras().getString("juzgado");
+//        itinerante = receivingIntent.getExtras().getString("itinerante");
     }
 
 
     public void tokenizeCard(View view) {
+        payButton.setEnabled(false);
         Tokenizer conekta = new Tokenizer("key_QVrGEJP5CoXKybaBM78LkgA", this);
         EditText nameText = (EditText) this.findViewById(R.id.nameText);
         EditText numberText = (EditText) this.findViewById(R.id.numberText);
@@ -124,6 +113,7 @@ public class Pagar extends Activity {
                                 }
                             });
                             alertDialog.show();
+                            payButton.setEnabled(true);
                             Log.d("ERROR: ", result);
                         }
 
@@ -154,6 +144,7 @@ public class Pagar extends Activity {
                 Intent sendingIntent = new Intent(Pagar.this, Gracias.class);
                 startActivity(sendingIntent);
             } else {
+                payButton.setEnabled(true);
                 AlertDialog alertDialog;
                 alertDialog = new AlertDialog.Builder(Pagar.this).create();
                 alertDialog.setTitle("Hubo un problema");
@@ -177,14 +168,14 @@ public class Pagar extends Activity {
             try {
 
                 object.put("token", token[0].id);
-                object.put("name", name);
-                object.put("last", last);
-                object.put("street", street);
-                object.put("number", numb);
-                object.put("colonia", colonia);
-                object.put("deleg", deleg);
-                object.put("juzgado", juzgado);
-                object.put("itinerante", itinerante);
+                object.put("name", Solicita.savedName);
+                object.put("last", Solicita.savedLast);
+                object.put("street", Solicita.savedStreet);
+                object.put("number", Solicita.savedNumero);
+                object.put("colonia", Solicita.savedColonia);
+                object.put("deleg", Solicita.savedDelegacion);
+                object.put("juzgado", Solicita.savedJuzgado);
+                object.put("itinerante", Solicita.savedItinerante);
             } catch (Exception ex) {
 
             }

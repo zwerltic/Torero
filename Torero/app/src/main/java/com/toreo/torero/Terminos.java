@@ -36,13 +36,13 @@ public class Terminos extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent sendingIntent = new Intent(Terminos.this, Pagar.class);
-                sendingIntent.putExtra("name", receivingIntent.getExtras().getString("name"));
-                sendingIntent.putExtra("last", receivingIntent.getExtras().getString("last"));
-                sendingIntent.putExtra("street", receivingIntent.getExtras().getString("street"));
-                sendingIntent.putExtra("number", receivingIntent.getExtras().getString("number"));
-                sendingIntent.putExtra("colonia", receivingIntent.getExtras().getString("colonia"));
-                sendingIntent.putExtra("delegacion", receivingIntent.getExtras().getString("delegacion"));
-                sendingIntent.putExtra("juzgado", receivingIntent.getExtras().getString("juzgado"));
+//                sendingIntent.putExtra("name", receivingIntent.getExtras().getString("name"));
+//                sendingIntent.putExtra("last", receivingIntent.getExtras().getString("last"));
+//                sendingIntent.putExtra("street", receivingIntent.getExtras().getString("street"));
+//                sendingIntent.putExtra("number", receivingIntent.getExtras().getString("number"));
+//                sendingIntent.putExtra("colonia", receivingIntent.getExtras().getString("colonia"));
+//                sendingIntent.putExtra("delegacion", receivingIntent.getExtras().getString("delegacion"));
+//                sendingIntent.putExtra("juzgado", receivingIntent.getExtras().getString("juzgado"));
                 startActivity(sendingIntent);
 
 

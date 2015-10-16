@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="primary" type="color">#ff3045c6</item>
-    <item name="primary_dark" type="color">#ff2740b7</item>
-    <item name= "button_aceptar" type="color">#ff35a0b7</item>
+    <item name="primary" type="color">#1976D2</item>
+    <item name="primary_dark" type="color">#1565C0</item>
     <item name= "actionbar_text" type="color">#ffffff</item>
     <item name= "accent" type="color">#ff41f2ff</item>
     <item name= "form_color" type="color">#ffffff</item>
-    <item name= "background_choice" type="color">#000099</item>
+    <item name= "background_choice" type="color">#0D47A1</item>
+    <item name= "button_aceptar" type="color">#8BC34A</item>
+    <item name="aceptar_press" type="color">#9CCC65</item>
+    <item name="button_pagar" type="color">#1DE9B6</item>
+    <item name="pagar_press" type="color">#64FFDA</item>
+    
 
 </resources>

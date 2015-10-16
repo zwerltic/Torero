@@ -21,26 +21,32 @@
     </string-array>
 
     <string-array name="lvaroObregn">
+        <item>Selecciona</item>
         <item>1. Escuadrón 201 Esq. Batallón de San Patricion S/N Col. Cristo Rey</item>
         <item>2. Camino Real de Toluca S/N entre paralela 2 y 3, Col. José María</item>
         <item>3. Tlaxcala y Av. México, Col. Progreso</item>
     </string-array>
     <string-array name="Azcapotzalco">
+        <item>Selecciona</item>
         <item>1. Av. de las Culturas y Eje 5 Norte, Col. Unidad El Rosario</item>
         <item>2. Av. 22 de Febrero y Castilla Oriente, Col. Santa Cruz Atoyac</item>
     </string-array>
     <string-array name="BenitoJurez">
+        <item>Selecciona</item>
         <item>1. Av. División del Norte, Esq. Eje 7 Sur Municipio Libre, Col. Santa Cruz Atoyac</item>
         <item>3. Obrero Mundial y Yacatas, Col. Piedad Narvarte</item>
         <item>5. Bretaña Nº6 y Orinoco, Col. Portales</item>
     </string-array>
     <string-array name="Coyoacn">
+        <item>Selecciona</item>
         <item>1. Tecualiapan y Zompantitlan, Col. Romero de Terreros</item>
         <item>3. Apaches y Eje 3 Oriente, Cafetales S/N, Col. San Francisco Culhuacán</item>
         <item>4. Tepalcatzin y Meconetzin, Col. Ajusco Zona Pedregal</item>
         <item>5. Canal Nacional y Laura Méndez Cuenca, Col. CTM Culhuacán</item>
     </string-array>
-    <string-array name="Cuauhtmoc"><item>1. Lerdo Nº322, Col. San Simón Tolnahúacan</item>
+    <string-array name="Cuauhtmoc">
+        <item>Selecciona</item>
+        <item>1. Lerdo Nº322, Col. San Simón Tolnahúacan</item>
         <item>2. Aldama y Mina, Col. Buenavista</item>
         <item>3. Paseo de la Reforma Nº705, Col. Morelos</item>
         <item>4. Centro de Legalidad y Justicia Paraguay No. 37, Col Centro</item>
@@ -48,9 +54,11 @@
         <item>8. Plaza Pino Suárez, Colonia Centro</item>
     </string-array>
     <string-array name="Cuajimalpa">
+        <item>Selecciona</item>
         <item>1. Castillo Ledón y Cerrada Ramírez, Col. Cuajimalpa de Morelos</item>
     </string-array>
     <string-array name="GustavoAMadero">
+        <item>Selecciona</item>
         <item>1. Emiliano Zapata y Guadalupe Victoria, Col. Cuautepec Barrion Bajo</item>
         <item>2. Cerrada Sur de los 100 M. S/N entre Vallejo y Eje Central, Col. Vallejo</item>
         <item>4. Vicnete Villada y 5 de Febrero, Col. Aragón la Villa</item>
@@ -59,10 +67,12 @@
         <item>8. Av. 661, Entre Av. 606, Col. San Juan de Aragón 6º Sección</item>
     </string-array>
     <string-array name="Iztacalco">
+        <item>Selecciona</item>
         <item>1. Av. Congreso de la Unión casi Esq. con Av. Coyuya, Col. Santa Anita</item>
         <item>2. Sur 157 y Calle THE, Col. Gabriel Ramos Millán</item>
     </string-array>
     <string-array name="Iztapalapa">
+        <item>Selecciona</item>
         <item>1. Callejón Circunvalación Esq. Ermita Iztapalapa, Col. Granjas San Antonio</item>
         <item>3. Churubusco y Apatalco, Col. San José Aculco</item>
         <item>4. 5 de Mayo y Callejón Victoria Col. Barrio San Lucas</item>
@@ -72,38 +82,46 @@
         <item>9. Calz. Ermita Iztapalapa, Esq. Zacatepec, Col. Santa Maria Acatitlan</item>
     </string-array>
     <string-array name="MagdalenaContreras">
+        <item>Selecciona</item>
         <item>1. Av. San Jerónimo Nº 2625, Esq. Soledad, Col. Lomas San Bernabé</item>
         <item>2. Cruz Verde Nº 4, Col. San Nicolás</item>
     </string-array>
     <string-array name="MiguelHidalgo">
+        <item>Selecciona</item>
         <item>1. Calzada México Tacuba y Mar Arábigo, Col. Tacuba</item>
         <item>3. Parque Lira Nº 94, Esq. Vicente Eguia, Col. Daniel Garza</item>
     </string-array>
     <string-array name="MilpaAlta">
+        <item>Selecciona</item>
         <item>1. Av. Jalisco, casi Esq. con Av. México, Col. Barrio San Mateo</item>
         <item>2. Prolongación Ignacio Zaragoza y 5 de Mayo, Col. San Antonio Tecomilt</item>
     </string-array>
     <string-array name="Tlhuac">
+        <item>Selecciona</item>
         <item>1. Av. Canal de Chalco S/N entre Piraña y Langosta Col. del Mar</item>
         <item>2. Nicolás Bravo S/N, Av.Tlahuac Barrio la Asunción</item>
     </string-array>
     <string-array name="Tlalpan">
+        <item>Selecciona</item>
         <item>1. Carretera Picacho Ajusco KM. 45, Col. Ampliación Miguel Hidalgo.</item>
         <item>3. Matamoros y Jojutla, Col. La Joya</item>
         <item>4. Canal Nacional, Esq. Anillo Periférico Sur (a un costado de la U. H. Dr. Ignacio Chávez</item>
     </string-array>
     <string-array name="VenustianoCarranza">
+        <item>Selecciona</item>
         <item>1. San Ciprián Nº 63 y General Ayala, Col. Centro</item>
         <item>2. Boulevard Puerto Aéreo y Norte 13, Col. Moctezuma 2ª sección</item>
         <item>3. Fray Servando T. de Mier y Fco. del Paso y Troncoso, Col. Jardín Balbuena</item>
         <item>Calle Circunvalación y Prolongación Rio Churubusco Col. El Caracol</item>
     </string-array>
     <string-array name="Xochimilco">
+        <item>Selecciona</item>
         <item>1. Circuito Martínez de Castro S/N Pueblo San Mateo Xalpa</item>
         <item>2. Cuitláhuac y Gladiolas, Col. Barrio San Pedro Xochimilco</item>
     </string-array>
 
     <string-array name="Itinerantes">
+        <item>Selecciona</item>
         <item>Grupo 1, Juez: Lic. Luis Brugada Yañez</item>
         <item>Grupo 2, Juez: Lic Fernando Alberto Vilchis Leija</item>
         <item>Grupo 3, Juez: Lic. Yajseel Yadira Beltrán Navarro</item>

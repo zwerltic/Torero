@@ -26,14 +26,14 @@ public class ConfirmarActivity extends Activity {
     TextView juzgado;
     TextView itinerante;
 
-    public static String savedName       = "Nombre     : ";
-    public static String savedLast       = "Apellido   : ";
-    public static String savedStreet     = "Calle      : ";
-    public static String savedNumero     = "Número     : ";
-    public static String savedColonia    = "Colonia    : ";
-    public static String savedDelegacion = "Delegación : ";
-    public static String savedJuzgado    = "Juzgado    : ";
-    public static String savedItinerante = "Itinerante : ";
+//    public static String savedName       = "Nombre     : ";
+//    public static String savedLast       = "Apellido   : ";
+//    public static String savedStreet     = "Calle      : ";
+//    public static String savedNumero     = "Número     : ";
+//    public static String savedColonia    = "Colonia    : ";
+//    public static String savedDelegacion = "Delegación : ";
+//    public static String savedJuzgado    = "Juzgado    : ";
+//    public static String savedItinerante = "Itinerante : ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,38 +48,38 @@ public class ConfirmarActivity extends Activity {
         delegacion = (TextView) findViewById(R.id.DisplayTextDelegacion);
         juzgado = (TextView) findViewById(R.id.DisplayTextJuzgado);
         itinerante = (TextView) findViewById(R.id.DisplayTextItinerante);
-        if (receivingIntent.getExtras() != null) {
-
-            savedName += receivingIntent.getExtras().getString("name");
-            savedLast += receivingIntent.getExtras().getString("last");
-            savedStreet += receivingIntent.getExtras().getString("street");
-            savedNumero += receivingIntent.getExtras().getString("numero");
-            savedColonia += receivingIntent.getExtras().getString("colonia");
-            savedDelegacion += receivingIntent.getExtras().getString("delegacion");
-            savedJuzgado += receivingIntent.getExtras().getString("juzgado");
-            savedItinerante += receivingIntent.getExtras().getString("itinerante");
-        }
-        name.setText(savedName);
-        lastName.setText(savedLast);
-        street.setText(savedStreet);
-        numero.setText(savedNumero);
-        colonia.setText(savedColonia);
-        delegacion.setText(savedDelegacion);
-        juzgado.setText(savedJuzgado);
-        itinerante.setText(savedItinerante);
+//        if (receivingIntent.getExtras() != null) {
+//
+//            savedName += receivingIntent.getExtras().getString("name");
+//            savedLast += receivingIntent.getExtras().getString("last");
+//            savedStreet += receivingIntent.getExtras().getString("street");
+//            savedNumero += receivingIntent.getExtras().getString("numero");
+//            savedColonia += receivingIntent.getExtras().getString("colonia");
+//            savedDelegacion += receivingIntent.getExtras().getString("delegacion");
+//            savedJuzgado += receivingIntent.getExtras().getString("juzgado");
+//            savedItinerante += receivingIntent.getExtras().getString("itinerante");
+//        };
+        name.setText("Nombre     : " + Solicita.savedName);
+        lastName.setText("Apellido   : " + Solicita.savedLast);
+        street.setText("Calle      : " + Solicita.savedStreet);
+        numero.setText("Número     : " + Solicita.savedNumero);
+        colonia.setText("Colonia    : " + Solicita.savedColonia);
+        delegacion.setText("Delegación : " + Solicita.savedDelegacion);
+        juzgado.setText("Juzgado    : " + Solicita.savedJuzgado);
+        itinerante.setText("Itinerante : " + Solicita.savedItinerante);
         final Button send = (Button) this.findViewById(R.id.ButtonSendPayment);
         send.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent sendingIntent = new Intent(ConfirmarActivity.this, Terminos.class);
-                sendingIntent.putExtra("name", receivingIntent.getExtras().getString("name"));
-                sendingIntent.putExtra("last", receivingIntent.getExtras().getString("last"));
-                sendingIntent.putExtra("street", receivingIntent.getExtras().getString("street"));
-                sendingIntent.putExtra("number", receivingIntent.getExtras().getString("number"));
-                sendingIntent.putExtra("colonia", receivingIntent.getExtras().getString("colonia"));
-                sendingIntent.putExtra("delegacion", receivingIntent.getExtras().getString("delegacion"));
-                sendingIntent.putExtra("juzgado", receivingIntent.getExtras().getString("juzgado"));
+//                sendingIntent.putExtra("name", receivingIntent.getExtras().getString("name"));
+//                sendingIntent.putExtra("last", receivingIntent.getExtras().getString("last"));
+//                sendingIntent.putExtra("street", receivingIntent.getExtras().getString("street"));
+//                sendingIntent.putExtra("number", receivingIntent.getExtras().getString("number"));
+//                sendingIntent.putExtra("colonia", receivingIntent.getExtras().getString("colonia"));
+//                sendingIntent.putExtra("delegacion", receivingIntent.getExtras().getString("delegacion"));
+//                sendingIntent.putExtra("juzgado", receivingIntent.getExtras().getString("juzgado"));
                 startActivity(sendingIntent);
 
 

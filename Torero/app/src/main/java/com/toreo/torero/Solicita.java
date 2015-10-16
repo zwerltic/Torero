@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +24,17 @@ public class Solicita extends Fragment {
     /* The fragment argument representing the section number for this
             * fragment.
     */
+
     private static final String ARG_SECTION_NUMBER = "section_number";
+
+    public static String savedName;
+    public static String savedLast;
+    public static String savedStreet;
+    public static String savedNumero;
+    public static String savedColonia;
+    public static String savedDelegacion;
+    public static String savedJuzgado;
+    public static String savedItinerante;
     // This final can affect the reset function of this section
     EditText nameField;
     EditText lastField;
@@ -42,6 +52,14 @@ public class Solicita extends Fragment {
      */
     public static Solicita newInstance(int sectionNumber) {
         Solicita fragment = new Solicita();
+        savedName       = "";
+        savedLast       = "";
+        savedStreet     = "";
+        savedNumero     = "";
+        savedColonia    = "";
+        savedDelegacion = "";
+        savedJuzgado    = "";
+        savedItinerante = "";
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -90,31 +108,33 @@ public class Solicita extends Fragment {
 
         buttonSumbit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String name = " ";
-                String last = " ";
-                String street = " ";
-                String numb = " ";
-                String colonia = " ";
-                String deleg = " ";
-                String juzgado = " ";
-                String itinerante = " ";
-                name += nameField.getText().toString();
-                last += lastField.getText().toString();
-                street += streetField.getText().toString();
-                numb += numField.getText().toString();
-                colonia += coloniaField.getText().toString();
-                deleg += delegSpinner.getSelectedItem().toString();
-                juzgado += juzgadoSpinner.getSelectedItem().toString();
-                itinerante += itineranteSpinner.getSelectedItem().toString();
+//                String name = " ";
+//                String last = " ";
+//                String street = " ";
+//                String numb = " ";
+//                String colonia = " ";
+//                String deleg = " ";
+//                String juzgado = " ";
+//                String itinerante = " ";
+//                name += nameField.getText().toString();
+
+                savedName += nameField.getText().toString();
+                savedLast += lastField.getText().toString();
+                savedStreet += streetField.getText().toString();
+                savedNumero += numField.getText().toString();
+                savedColonia += coloniaField.getText().toString();
+                savedDelegacion += delegSpinner.getSelectedItem().toString();
+                savedJuzgado += juzgadoSpinner.getSelectedItem().toString();
+                savedItinerante += itineranteSpinner.getSelectedItem().toString();
                 Intent sendingIntent = new Intent(getActivity(), ConfirmarActivity.class);
-                sendingIntent.putExtra("name", name);
-                sendingIntent.putExtra("last", last);
-                sendingIntent.putExtra("street", street);
-                sendingIntent.putExtra("numero", numb);
-                sendingIntent.putExtra("colonia", colonia);
-                sendingIntent.putExtra("delegacion", deleg);
-                sendingIntent.putExtra("juzgado", juzgado);
-                sendingIntent.putExtra("itinerante", itinerante);
+//                sendingIntent.putExtra("name", name);
+//                sendingIntent.putExtra("last", last);
+//                sendingIntent.putExtra("street", street);
+//                sendingIntent.putExtra("numero", numb);
+//                sendingIntent.putExtra("colonia", colonia);
+//                sendingIntent.putExtra("delegacion", deleg);
+//                sendingIntent.putExtra("juzgado", juzgado);
+//                sendingIntent.putExtra("itinerante", itinerante);
                 startActivity(sendingIntent);
             }
 
